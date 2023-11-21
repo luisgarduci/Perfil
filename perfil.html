@@ -18,6 +18,8 @@
         box-sizing: border-box;
     }
 
+    
+
     body {
       display: flex;
       justify-content: center;
@@ -186,8 +188,9 @@
    }
 
    @media (max-width: 830px) {
-
-    
+   div#perfil {
+    height: 100vh;
+   }
     div#configuracoes > p#titulo {
      font-size: 14px;
      margin-right: 50px;
@@ -203,10 +206,11 @@
 
     div#configuracoes > div#dados-pessoais > h1 {
       font-size: 14px;
+      margin-right: 50px;
     }
 
     div#configuracoes > div#dados-pessoais > form > input {
-      width: 100px;
+      width: 120px;
     }
    }
 
@@ -231,6 +235,7 @@
             </div>
             <p id="academia"></p>
             </div>
+           
             <div id="configuracoes">
             <p id="titulo">Coloque uma foto de perfil ou utilize algum avatar</p>
             <p id="escolha">Escolha algum avatar!</p>
