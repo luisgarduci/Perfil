@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+
+    @font-face {
+    font-family: "Star7";
+    src: url(STAR7.ttf);
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+   div#perfil {
+      height: 100vh;
+      width: 30vw;
+      border-right: 2px solid black;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 35px;
+      margin-top: 15px;
+    }
+
+   div#perfil > #imagem {
+      height: 120px;
+      width: 120px;
+      margin-top: 25px;
+      object-fit: cover;
+   }
+
+   div#perfil > #container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-family: "Star7";
+    font-size: 25px;
+   }
+
+   div#perfil > #titulo {
+    width: 100px;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 5px;
+   }
+
+   div#perfil > #container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+   }
+
+   div#perfil > #container2 > #pontos {
+     font-size: 20px;
+   }
+
+   div#perfil > #container2 > #medalha {
+    height: 30px;
+   }
+
+   div#configuracoes {
+      width: 70vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+   }
+
+   div#configuracoes > p#titulo{
+      text-align: center;
+      font-size: 18px;
+      margin-top: 23px;
+      font-family: "Star7";
+   }
+
+   div#configuracoes > p#escolha {
+    font-size: 18px;
+    margin-top: 15px;
+    color: red;
+    display: none;
+   }
+
+   div#configuracoes > .container-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 20px;
+   }
+
+   div#configuracoes > .container-avatar > .avatares {
+     height: 70px;
+     cursor: pointer;
+   }
+
+   div#configuracoes > .container-avatar > .avatares:hover {
+     border: 2px solid black;
+   }
+
+
+   div#configuracoes > input {
+    margin-top: 30px;
+    width: 100px;
+    padding: 2px;
+    font-size: 15px;
+   }
+
+   div#perfil > #dadosfisicos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+   }
+
+   div#perfil > #dadosfisicos > p {
+     font-size: 19px;
+   }
+
+   div#fotoperfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+   }
+
+   div#perfil > #academia {
+    font-size: 19px;
+   }
+
+   div#configuracoes > .container-avatar > .avatares {
+     background-image: linear-gradient(to bottom, black, white)
+   }
+
+   div#configuracoes > #container-avatar5 {
+    display: none;
+   }
+   
+   div#configuracoes > div#dados-pessoais{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 40px;
+   }
+
+   div#configuracoes > div#dados-pessoais > h1{
+      font-size: 25px;
+      font-family: "Star7";
+      text-align: center;
+      margin-bottom: 10px;
+   }
+
+   div#configuracoes > div#dados-pessoais > p#alerta {
+    font-size: 15px;
+    color: red;
+    margin-bottom: 15px;
+    text-align: center;
+   }
+
+   div#configuracoes > div#dados-pessoais > form > input{
+      padding: 3px;
+     
+   }
+
+   a > img#seta {
+     height: 30px;
+     position: absolute;
+     top: 10px;
+     left: 10px;
+   }
+
+   @media (max-width: 830px) {
+    div#configuracoes > p#titulo {
+     font-size: 15px;
+    }
+
+    div#configuracoes > .container-avatar {
+      gap: 60px;
+    }
+    div#configuracoes > .container-avatar > .avatares {
+      height: 60px;
+    }
+   }
+
+</style>
+<body id="corpo">
+<!--
+<?php session_start();?>
+-->
+<a href="cliente.php"><img src="imagens/arrow.png" id="seta" class="icones"></img></a>
+<div id="perfil">
+            <img src="imagens/profile.png" alt="" id="imagem">
+            <div id="container1">
+            <p id="usuario"></p> 
+            <p id="identificador"></p>
+            </div>
+            <button id="titulo"></button>
+            <div id="container2">
+            <p id="pontos"></p> <img src="imagens/medal.png" alt="" id="medalha"></img>
+            </div>
+            <div id="dadosfisicos">
+              <p id="peso"></p><p id="altura"></p>
+            </div>
+            <p id="academia"></p>
+            </div>
+            <div id="configuracoes">
+            <p id="titulo">Coloque uma foto de perfil ou utilize algum avatar</p>
+            <p id="escolha">Escolha algum avatar!</p>
+            <div id="container-avatar1" class="container-avatar">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=a15" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=minecraft" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Kerecsssasf" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=+345" alt="" class="avatares"></img>
+            </div>
+            <div id="container-avatar2" class="container-avatar">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=cda" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=xcvvcxvcvc" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Garfield" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Gizmo" alt="" class="avatares"></img>
+            </div>
+            <div id="container-avatar3" class="container-avatar">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Charlie" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=women" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Angel" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Simba" alt="" class="avatares"></img>
+            </div>
+            <div id="container-avatar4" class="container-avatar">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Buster" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Annie" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Salem" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=George" alt="" class="avatares"></img>
+            </div>
+            <div id="container-avatar5" class="container-avatar">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sadie" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Oreo" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sasha" alt="" class="avatares"></img>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Cook" alt="" class="avatares"></img>
+            </div>
+            <input type="submit" name="AtualizarAvatar" id="AtualizarImgAvatar" value="Atualizar">
+    
+              
+              <form method="post" id="formPerfil">
+              <div id="fotoperfil">
+              <p>Foto de perfil: </p><input type="text" name="inputFoto" id="fotoperfil" placeholder="Url da imagem" autocomplete="off">
+              <input type="submit" value="Atualizar" name="Atualizarfoto">
+            </div>
+            </form>
+            
+            <div id="dados-pessoais">
+            <h1>Atualizar Dados</h1>
+            <p id="alerta">*Preencha todos os campos com atenção*</p>
+            <form method="post">
+               <input type="text" name="usuario" minlength="3" maxlength="20" placeholder="Usuário">
+               <input type="email" name="email" placeholder="Email">
+               <input type="password" name="senha" minlength="8" maxlength="25" placeholder="Senha" >
+               <br>
+               </form>
+               <input type="submit" name="AtualizarDados"value="Atualizar">
+            </div>
+            </div>
+            
+      <!--    
+    <?php
+    
+    require_once 'conexao.php';
+    //Se o usuário estiver logado 
+  
+      if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+        $statement = $conexao -> prepare('SELECT * FROM clientes WHERE id = ?');
+        $statement -> bind_param("i", $_SESSION['id']);
+        $statement -> execute();
+        $result = $statement -> get_result();
+        if ($result) {
+            foreach ($result as $key => $value) {
+                $usuario = $value['usuario'];
+                $email = $value['email'];
+                $senha = $value['senha'];
+                $titulo = $value['titulo'];
+                $pontos = $value['pontos'];
+                $imagem = $value['imagem'];
+                $peso = $value['peso'];
+                $altura = $value['altura'];
+                $academia = $value['academia'];
+            }
+            $_SESSION['perfil'] = $imagem;
+        echo '<script>
+        const corpo = document.querySelector("#corpo");
+        const imagem = document.querySelector("#imagem");
+        const usuario = document.querySelector("#usuario");
+        const id = document.querySelector("#identificador");
+        const titulo = document.querySelector("#titulo");
+        const pontos = document.querySelector("#pontos");
+        const peso = document.querySelector("#peso");
+        const altura = document.querySelector("#altura");
+        const formPerfil = document.querySelector("#formPerfil");
+        const academia = document.querySelector("#academia")
+        const avatares = document.querySelectorAll(".avatares");
+        const escolha = document.querySelector("#escolha");
+        const AtualizarImgAvatar = document.querySelector("#AtualizarImgAvatar");
+        const container_avatar4 = document.querySelector("#container-avatar4");
+        const container_avatar5 = document.querySelector("#container-avatar5");
+        let perfil = "";
+        corpo.style.visibility = "visible"
+              //Escrevendo na tela as informações registradas do usuario
+               usuario.innerHTML = "' . $usuario . '"
+               id.innerHTML = " id: ' . $_SESSION['id'] . '"
+               titulo.innerHTML = "' . $titulo . '"
+               pontos.innerHTML = "' . $pontos . '"
+               imagem.src = "' . $_SESSION['perfil']. '"
+               peso.innerHTML = "Peso:' . $peso . '"
+               altura.innerHTML = "Altura: ' . $altura . '"
+               academia.innerHTML = "Academia: ' . $academia . '"
+               //Adicionando um evento de click para cada elemento dentro do vetor dos avatares
+               avatares.forEach(avatar => {
+                avatar.addEventListener ("click" , (event) => {
+                  for (let i = 0; i < avatares.length; i++) {
+                    //Pegando o valor do avatar que foi clicado
+                  if (event.target == avatares[i]) {
+                  perfil = avatares[i].src;
+                  }
+                }
+              
+                })
+              })
+              
+              //Atribuindo um novo valor ao src da imagem de perfil a partir do avatar que foi clicado
+              AtualizarImgAvatar.addEventListener("click" , (event) => {
+
+                //Verificando se o usuario escolheu um avatar
+                if (perfil === "") {
+                   escolha.style.display = "flex";
+                   setInterval (() => {
+                   escolha.style.display = "none";
+                   }, 6000)
+                }
+                else {
+                  
+                 // Usando AJAX para enviar o caminho da imagem para o PHP
+                 let xhr = new XMLHttpRequest();
+                 xhr.open("POST", "atualizar_img_perfil.php");
+                 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                 xhr.onreadystatechange = function() {
+                     if (xhr.readyState == 4 && xhr.status == 200) {
+                         // Faça algo com a resposta do servidor, se necessário
+                         console.log(xhr.responseText);
+                         
+                     }
+                 };
+                 xhr.send("perfil=" + perfil);
+                 
+                 imagem.src = perfil;
+                 
+             }
+             })
+
+
+            </script>';
+            
+            
+        }
+
+        
+        if ($pontos > 100) {
+          echo '<script>container_avatar5.style.display = "flex"</script>';
+        }
+        
+      }
+      if (isset($_POST['Atualizarfoto'])) {
+        $urlimagem = $_POST['inputFoto'];
+        $statement = $conexao->prepare("UPDATE clientes SET imagem = ? WHERE id = ?");
+        $statement -> bind_param("si" , $urlimagem, $_SESSION['id']);
+        $statement -> execute();
+        if ($statement) {
+          $_SESSION['perfil'] = $urlimagem;
+          echo '<script>imagem.src = "' . $_SESSION['perfil'] . '"</script>';
+        }
+        $statement->close();
+        $conexao->close();
+      }
+
+     if (isset($_POST['AtualizarDados'])) {
+      $usuarioAtualizado = $_POST['usuario'];
+      $emailAtualizado = $_POST['email'];
+      $senhaAtualizada = $_POST['senha'];
+      
+      if (empty($usuarioAtualizado)) {
+        $usuarioAtualizado = $usuario;
+      }
+      
+      if (empty($emailAtualizado)) {
+        $emailAtualizado = $email;
+      }
+
+      if (empty($senhaAtualizada)) {
+        $senhaAtualizada = $senha;
+      }
+
+      $statement = $conexao->prepare("UPDATE clientes SET usuario = ?, email = ?, senha = ? WHERE id = ?");
+      $statement -> bind_param("sssi" , $usuarioAtualizado, $emailAtualizado, $senhaAtualizada, $_SESSION['id']);
+      $statement->execute();
+      $statement->close();
+      $conexao->close();
+      echo '<script>window.location.href = "carregando.php"</script>';
+    }
+      
+    ?>
+    -->
+</body>
+</html>
