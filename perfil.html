@@ -18,10 +18,7 @@
         box-sizing: border-box;
     }
 
-    
-
     body {
-      
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,7 +32,6 @@
       align-items: center;
       flex-direction: column;
       gap: 35px;
-      
     }
 
    div#perfil > #imagem {
@@ -190,8 +186,8 @@
 
    @media (max-width: 830px) {
    
-    div#perfil > a#seta {
-     height: 10px;
+    div#perfil {
+      
     }
 
     div#configuracoes > p#titulo {
@@ -208,13 +204,19 @@
     }
 
     div#configuracoes > div#dados-pessoais > h1 {
-      font-size: 14px;
-      margin-right: 50px;
+      font-size: 16px;
+      
     }
 
     div#configuracoes > div#dados-pessoais > form > input {
       width: 120px;
     }
+   }
+
+   @media (max-width: 700px) {
+      div#configuracoes{
+         display: none;
+      }
    }
 
 </style>
@@ -307,7 +309,7 @@
         $statement -> execute();
         $result = $statement -> get_result();
         if ($result) {
-            foreach ($result as $key => $value) {
+            foreach ($result as 2$key => $value) {
                 $usuario = $value['usuario'];
                 $email = $value['email'];
                 $senha = $value['senha'];
